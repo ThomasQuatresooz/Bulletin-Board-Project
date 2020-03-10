@@ -93,6 +93,18 @@ class UserGateway
         }
     }
 
+    public function getIdFrom($email)
+    {
+        $statement = 'SELECT idUsers from users WHERE email = ?';
+        try {
+            $db = DatabaseManager::getInstance()->getDatabase();
+            $sth = $db->prepare($statement);
+            return ($sth->execute([$email])) ? $sth->fetch()['password'] : null;
+        } catch (\PDOException $th) {
+            echo ($th->getMessage());
+        }
+    }
+
     public function getAvatarFrom($userId): ?string
     {
         $statement = 'SELECT avatar from users WHERE avatar = ?';
