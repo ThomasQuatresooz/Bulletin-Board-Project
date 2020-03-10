@@ -1,0 +1,58 @@
+@import url(header.css);
+@import url(footer.css);
+
+/*BODY*/
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  background-color: #d7d9b1;
+}
+.row {
+  margin: 5px;
+  padding: 2px;
+  background-color: lightblue;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
+}
+#bouton {
+  background-color: #363020;
+  color: black;
+  text-transform: uppercase;
+  font-size: larger;
+  height: auto;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 10px;
+}
+#bouton:hover {
+  background-color: lightblue;
+}
+.col-lg-12 h2 {
+  background-color: #363020;
+  border-radius: 20px;
+  font-size: 40px;
+  padding: 20px;
+  margin: 10px;
+  color: #d7d9b1;
+}
+
+.col-lg-12 {
+  background-color: white;
+  height: auto;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.col-lg-12 label {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  color: #363020;
+  margin-top: 20px;
+}
+
+.col-lg-12 input {
+  height: auto;
+  width: 300px;
+  border-radius: 20px;
+  padding: 10px;
+}

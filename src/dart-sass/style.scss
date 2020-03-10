@@ -1,0 +1,137 @@
+$base-color: #d7d9b1;
+$row-color: lightblue;
+$col-lg-1-color: white;
+$bouton-color: #363020;
+$icon-color: #fa8334;
+$output-color: #d7d9b1;
+$topic-color: #363020;
+$h2-back-color: #363020;
+
+$text: Verdana, Geneva, Tahoma, sans-serif;
+$h1-color: #fa8334;
+$h2-color: black;
+$bouton-color: black;
+
+@import url(header.css);
+@import url(footer.css);
+
+/*BODY*/
+
+body {
+  font-family: $text;
+  text-align: center;
+  background-color: $base-color;
+}
+.row {
+  margin: 5px;
+  background-color: $icon-color;
+  border-radius: 30px;
+  box-shadow: 8px 8px 12px #363020;
+  text-align: center;
+}
+
+#bouton {
+  background-color: $bouton-color;
+  @if (lightness(#d7d9b1) > 80%) {
+    color: black;
+  } @else {
+    color: #d7d9b1;
+  }
+  text-transform: uppercase;
+  font-size: larger;
+  height: 50px;
+  font-family: $text;
+
+  &:hover {
+    background-color: $row-color;
+  }
+}
+
+@for $i from 1 through 12 {
+  .col-lg-#{i} {
+    padding: 20px;
+    margin-top: 20px;
+    background-color: $col-lg-1-color;
+    border-radius: 30px;
+    line-height: 20px;
+    text-align: center;
+    box-shadow: 8px 8px 12px #363020;
+
+    input {
+      height: 30px;
+      width: 300px;
+      border-radius: 30px;
+      margin: 20px;
+      padding: 5px;
+    }
+
+    output {
+      color: $output-color;
+      font-family: $text;
+      font-size: 15px;
+    }
+
+    a {
+      margin: 20px;
+      color: $icon-color;
+      float: right;
+      font-size: 20px;
+    }
+    h1 {
+      background-color: $icon-color;
+      padding: 20px;
+      border-radius: 30px;
+    }
+    h2 {
+      background-color: $h2-back-color;
+      padding: 20px;
+      border-radius: 30px;
+      font-size: 20px bolder;
+      color: $base-color;
+    }
+    img {
+      height: 200px;
+      width: 200px;
+      border-radius: 250px;
+      border: solid 10px #fa8334;
+    }
+    form {
+      background-color: $base-color;
+      margin: 10px;
+    }
+    label {
+      color: #d7d9b1;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 25px;
+    }
+  }
+}
+.topic {
+  background-color: #363020;
+  padding: 10px;
+  border-radius: 30px;
+  margin: 5px;
+  box-shadow: 8px 8px 12px #363020;
+
+  a {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    color: #d7d9b1;
+  }
+  p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    color: #d7d9b1;
+  }
+}
+h1 {
+  background-color: $icon-color;
+  padding: 20px;
+  border-radius: 20px;
+}
+h2 {
+  background-color: $icon-color;
+  padding: 20px;
+  border-radius: 30px;
+  font-size: 20px;
+}

@@ -1,0 +1,75 @@
+/*BODY*/
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  background-color: #d7d9b1;
+}
+.container {
+  text-align: center;
+  vertical-align: middle;
+}
+.row {
+  margin: 20px;
+  background-color: lightblue;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 5px;
+  text-align: center;
+  box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
+}
+
+#bouton {
+  background-color: #363020;
+  color: black;
+  text-transform: uppercase;
+  font-size: larger;
+  height: auto;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  width: auto;
+}
+#bouton:hover {
+  background-color: lightblue;
+}
+h2 {
+  background-color: #363020;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 20px bolder;
+  height: auto;
+  color: #d7d9b1;
+}
+.col-lg-5 {
+  padding: 20px;
+  background-color: white;
+  border-radius: 20px;
+  border: solid 5px #363020;
+  line-height: 20px;
+  text-align: center;
+  box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
+}
+.col-lg-5 input {
+  height: 30px;
+  width: 300px;
+  border-radius: 20px;
+  margin: 20px;
+  padding: 20px;
+}
+.col-lg-5 a {
+  margin: 10px;
+  color: #363020;
+}
+
+#lost {
+  color: rgb(60, 108, 124);
+}
+.logo {
+  vertical-align: middle;
+}
+
+.logo img {
+  height: 150px;
+  width: 150px;
+  border-radius: 20px;
+}
+
+/*# sourceMappingURL=style-sign.css.map */

@@ -7,27 +7,72 @@ spl_autoload_register(function ($class) {
 if (isset($SESSION["userID"]))
 ?>
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
-    <title>Document</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://kit.fontawesome.com/960ffcdeb4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="dart-sass/style-sign.css" rel="stylesheet" />
+    <title>Sign in / Sign Up</title>
 </head>
 
 <body>
-    <?php
-require_once('./class/parsedown-1.7.4/Parsedown.php');
+    <div class="container">
 
-$parse = new Parsedown();
+        <div class="row">
+            <div class="col-lg-5">
+                <h2>Sign In</h2>
+                <form action="sign.php" method="POST">
+                    <input type="text" name="" placeholder="Email" /></br>
+                    <input type="password" name="" placeholder="Password" /></br>
+                    <a href="profil.html"><input id="bouton" type="submit" name="" value="Login" /></a></br>
+                </form>
+                <a href="#" id="lost">Lost your passeword?</a>
+            </div>
+            <div class="col-lg-2">
+                <div class="logo">
+                    <img src="images/logo.jpg">
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <h2>Sign Up</h2>
+                <form>
+                    <input type="text" name="" placeholder="Firstname" /></br>
+                    <input type="text" name="" placeholder="Lastname" /></br>
+                    <input type="text" name="" placeholder="Email" /></br>
+                    <input type="password" name="" placeholder="Create Password" /></br>
+                    <a href="profil.html"><input id="bouton" type="submit" name="" value="Create account" /></a></br>
+                </form>
+
+            </div>
+
+            <a href="profil.php">Profil</a>
+            <a href="boards.php">Boards</a>
+            <a href="topics.php">topics</a>
 
 
-$file = file_get_contents('./readme.md');
-echo $parse->text($file);
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+
+<?php
+// require_once('./class/parsedown-1.7.4/Parsedown.php');
+
+// $parse = new Parsedown();
+
+
+// $file = file_get_contents('./readme.md');
+// echo $parse->text($file);
 // * * *
 // ## Part one - basics
 // In this project, you will create a _bulletin board_, also called _forum_, using `PHP` & `MySQL`.
@@ -84,13 +129,10 @@ echo $parse->text($file);
 // $pwd = password_hash('123456789',PASSWORD_DEFAULT);
 // $test->insert('TEST5',$pwd,'test@HOT5.com');
 
-    ?>
+?>
 
 
 
-    <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> -->
-</body>
-
-</html>

@@ -1,5 +1,4 @@
 <?php
-require_once('DatabaseManager.php');
 require_once('UserGateway.php');
 
 const USER = "email";

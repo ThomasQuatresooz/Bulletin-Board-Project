@@ -1,0 +1,68 @@
+@import url(header.css);
+@import url(footer.css);
+
+/*BODY*/
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  background-color: #d7d9b1;
+}
+.container {
+  text-align: center;
+}
+.row {
+  background-color: lightblue;
+  border-radius: 30px;
+  padding: 2px;
+  margin: 5px;
+  text-align: center;
+  box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
+}
+
+.col-lg-6 {
+  padding: 20px;
+
+  background-color: white;
+  border-radius: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+.col-lg-6 input {
+  height: auto;
+  width: 300px;
+  border-radius: 30px;
+  margin: 20px;
+  padding: 5px;
+}
+
+.col-lg-6 output {
+  color: #363020;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+}
+.col-lg-6 label {
+  color: #363020;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 25px;
+}
+.col-lg-6 img {
+  height: 200px;
+  width: 200px;
+  border-radius: 250px;
+  border: solid 10px #363020;
+  margin: 10px;
+}
+
+.col-lg-6 a {
+  margin: 10px;
+  color: #363020;
+  float: right;
+}
+.col-lg-6 h1 {
+  background-color: #363020;
+  padding: 30px;
+  border-radius: 30px;
+}
+
+/*# sourceMappingURL=profil.css.map */
