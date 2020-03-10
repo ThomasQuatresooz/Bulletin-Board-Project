@@ -1,0 +1,98 @@
+header {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+  border-radius: 10px;
+  margin: 10px;
+  position: relative;
+  height: 100px;
+  z-index: 9;
+  margin-left: 90px;
+  margin-right: 90px;
+}
+
+.logo {
+  float: left;
+  width: 100px;
+}
+
+.logo img {
+  height: 100px;
+  width: 100px;
+  border-radius: 20px;
+}
+
+a {
+  color: #363020;
+  text-decoration: none;
+}
+
+.menu {
+  background: white;
+  color: black;
+  height: 50px;
+  border-radius: 20px;
+  margin-left: 110px;
+  height: 100px;
+}
+
+.menu nav {
+  background: inherit;
+  font-size: 20px;
+  font-weight: bold;
+  overflow: hidden;
+  text-transform: uppercase;
+  transition: height 0.2s;
+  height: 0;
+}
+
+.menu nav > * {
+  display: block;
+  letter-spacing: 1px;
+  line-height: 2.5;
+  width: auto;
+  padding: 0 20px;
+  color: #363020;
+}
+
+.menu nav input {
+  background: rgba(0, 0, 0, 0.2);
+  border: none;
+  color: #363020;
+}
+
+.menu .burger {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  color: inherit;
+  cursor: pointer;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 30px;
+  line-height: 50px;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  top: 0;
+  right: 10px;
+  color: #363020;
+  float: right;
+  padding: 20px;
+}
+
+.menu .burger:before {
+  content: "Menu";
+}
+
+.menu .burger:checked:before {
+  content: "X";
+}
+
+.menu .burger:checked + nav {
+  /* height: calc(100vh - 50px); */
+  border-radius: 10px;
+  display: flex;
+
+  flex-direction: column;
+  justify-content: space-between;
+  height: fit-content;
+}
