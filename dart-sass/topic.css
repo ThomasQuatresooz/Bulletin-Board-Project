@@ -1,0 +1,90 @@
+@import url(header.css);
+@import url(footer.css);
+
+/*BODY*/
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  background-color: #d7d9b1;
+}
+.row {
+  margin: 5px;
+  padding: 2px;
+  background-color: lightblue;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
+}
+#bouton {
+  background-color: #363020;
+  color: black;
+  text-transform: uppercase;
+  font-size: larger;
+  height: 50px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#bouton:hover {
+  background-color: lightblue;
+}
+
+.col-lg-12 {
+  background-color: white;
+  height: auto;
+  border-radius: 20px;
+  text-align: center;
+}
+.col-lg-12 h2 {
+  background-color: #363020;
+  border-radius: 20px;
+  font-size: 40px;
+  color: #d7d9b1;
+  padding: 20px;
+}
+.col-lg-12 input {
+  height: 30px;
+  width: 300px;
+  border-radius: 20px;
+  margin: 10px;
+}
+#content {
+  height: 300px;
+  width: 500px;
+  border-radius: 20px;
+  border: #363020 2px solid;
+}
+
+.col-lg-12 output {
+  color: #d7d9b1;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+}
+.col-lg-12 a {
+  margin-top: 30px;
+  color: #fa8334;
+}
+.col-lg-12 select {
+  width: 300px;
+  padding: 10px;
+  border-radius: 30px;
+}
+.col-lg-12 i {
+  color: #363020;
+  float: right;
+  margin: 10px;
+}
+.col-lg-12 output {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  margin-right: 20px;
+  color: #363020;
+}
+h2 {
+  background-color: #363020;
+  border-radius: 20px;
+  font-size: 40px;
+  padding: 30px;
+  margin: 5px;
+  color: #d7d9b1;
+}
+/*# sourceMappingURL=topic.css.map */
