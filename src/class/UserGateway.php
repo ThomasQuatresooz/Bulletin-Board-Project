@@ -34,7 +34,7 @@ class UserGateway
 
     public function insert($name, $pwd, $email): ?int
     {
-        $statement = 'INSERT INTO users (name, password, email) VALUES (?, ?, ?)';
+        $statement = 'INSERT INTO users (name, password, email) VALUES ( ?, ?, ?)';
 
         try {
             $db = DatabaseManager::getInstance()->getDatabase();

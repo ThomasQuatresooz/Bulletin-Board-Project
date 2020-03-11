@@ -1,9 +1,10 @@
-POST http://localhost:80 HTTP/1.1
+POST http://localhost/class/inscription.php HTTP/1.1
 Content-Type: : application/json
 
 {
-  "email" : "test@HOT3.com",
-  "mdp" : "123456789"
+  "email" : "test_aly666@HOT3.com",
+  "mdp" : "123456789",
+  "nickname" : "Test_Aly666"
 }
 
 ###
