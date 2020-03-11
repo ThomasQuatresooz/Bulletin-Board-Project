@@ -1,0 +1,858 @@
+@import url(header.css);
+@import url(footer.css);
+/*BODY*/
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  background-color: #d7d9b1;
+}
+
+.container {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.row {
+  background-color: lightblue;
+  border-radius: 20px;
+  padding: 2px;
+  margin: 5px;
+  text-align: center;
+  box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
+}
+
+#bouton {
+  background-color: #363020;
+  color: black;
+  text-transform: uppercase;
+  font-size: larger;
+  height: auto;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  width: auto;
+}
+
+#bouton:hover {
+  background-color: lightblue;
+}
+
+.col-lg-i {
+  padding: 5px;
+  background-color: white;
+  border-radius: 20px;
+  border: solid 5px #363020;
+  line-height: 10px;
+  text-align: center;
+  box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
+}
+.col-lg-i input {
+  height: 30px;
+  width: 300px;
+  border-radius: 20px;
+  margin: 20px;
+  padding: 20px;
+}
+.col-lg-i output {
+  color: #363020;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+}
+.col-lg-i a {
+  margin: 10px;
+  color: #363020;
+  font-weight: bolder;
+}
+.col-lg-i h1 {
+  background-color: #363020;
+  padding: 20px;
+  border-radius: 20px;
+  font-size: 20px bolder;
+  color: white;
+}
+.col-lg-i img {
+  height: 200px;
+  width: 200px;
+  border-radius: 250px;
+  border: solid 10px #363020;
+  margin: 10px;
+}
+.col-lg-i form {
+  background-color: white;
+  margin: 10px;
+}
+.col-lg-i label {
+  color: #363020;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 25px;
+  margin: 20px;
+}
+.col-lg-i select {
+  width: 300px;
+  padding: 10px;
+  border-radius: 30px;
+}
+.col-lg-i i {
+  color: #363020;
+  float: right;
+  margin: 10px;
+}
+.col-lg-i p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+  color: #363020;
+}
+
+.col-lg-i {
+  padding: 5px;
+  background-color: white;
+  border-radius: 20px;
+  border: solid 5px #363020;
+  line-height: 10px;
+  text-align: center;
+  box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
+}
+.col-lg-i input {
+  height: 30px;
+  width: 300px;
+  border-radius: 20px;
+  margin: 20px;
+  padding: 20px;
+}
+.col-lg-i output {
+  color: #363020;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+}
+.col-lg-i a {
+  margin: 10px;
+  color: #363020;
+  font-weight: bolder;
+}
+.col-lg-i h1 {
+  background-color: #363020;
+  padding: 20px;
+  border-radius: 20px;
+  font-size: 20px bolder;
+  color: white;
+}
+.col-lg-i img {
+  height: 200px;
+  width: 200px;
+  border-radius: 250px;
+  border: solid 10px #363020;
+  margin: 10px;
+}
+.col-lg-i form {
+  background-color: white;
+  margin: 10px;
+}
+.col-lg-i label {
+  color: #363020;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 25px;
+  margin: 20px;
+}
+.col-lg-i select {
+  width: 300px;
+  padding: 10px;
+  border-radius: 30px;
+}
+.col-lg-i i {
+  color: #363020;
+  float: right;
+  margin: 10px;
+}
+.col-lg-i p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+  color: #363020;
+}
+
+.col-lg-i {
+  padding: 5px;
+  background-color: white;
+  border-radius: 20px;
+  border: solid 5px #363020;
+  line-height: 10px;
+  text-align: center;
+  box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
+}
+.col-lg-i input {
+  height: 30px;
+  width: 300px;
+  border-radius: 20px;
+  margin: 20px;
+  padding: 20px;
+}
+.col-lg-i output {
+  color: #363020;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+}
+.col-lg-i a {
+  margin: 10px;
+  color: #363020;
+  font-weight: bolder;
+}
+.col-lg-i h1 {
+  background-color: #363020;
+  padding: 20px;
+  border-radius: 20px;
+  font-size: 20px bolder;
+  color: white;
+}
+.col-lg-i img {
+  height: 200px;
+  width: 200px;
+  border-radius: 250px;
+  border: solid 10px #363020;
+  margin: 10px;
+}
+.col-lg-i form {
+  background-color: white;
+  margin: 10px;
+}
+.col-lg-i label {
+  color: #363020;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 25px;
+  margin: 20px;
+}
+.col-lg-i select {
+  width: 300px;
+  padding: 10px;
+  border-radius: 30px;
+}
+.col-lg-i i {
+  color: #363020;
+  float: right;
+  margin: 10px;
+}
+.col-lg-i p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+  color: #363020;
+}
+
+.col-lg-i {
+  padding: 5px;
+  background-color: white;
+  border-radius: 20px;
+  border: solid 5px #363020;
+  line-height: 10px;
+  text-align: center;
+  box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
+}
+.col-lg-i input {
+  height: 30px;
+  width: 300px;
+  border-radius: 20px;
+  margin: 20px;
+  padding: 20px;
+}
+.col-lg-i output {
+  color: #363020;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+}
+.col-lg-i a {
+  margin: 10px;
+  color: #363020;
+  font-weight: bolder;
+}
+.col-lg-i h1 {
+  background-color: #363020;
+  padding: 20px;
+  border-radius: 20px;
+  font-size: 20px bolder;
+  color: white;
+}
+.col-lg-i img {
+  height: 200px;
+  width: 200px;
+  border-radius: 250px;
+  border: solid 10px #363020;
+  margin: 10px;
+}
+.col-lg-i form {
+  background-color: white;
+  margin: 10px;
+}
+.col-lg-i label {
+  color: #363020;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 25px;
+  margin: 20px;
+}
+.col-lg-i select {
+  width: 300px;
+  padding: 10px;
+  border-radius: 30px;
+}
+.col-lg-i i {
+  color: #363020;
+  float: right;
+  margin: 10px;
+}
+.col-lg-i p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+  color: #363020;
+}
+
+.col-lg-i {
+  padding: 5px;
+  background-color: white;
+  border-radius: 20px;
+  border: solid 5px #363020;
+  line-height: 10px;
+  text-align: center;
+  box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
+}
+.col-lg-i input {
+  height: 30px;
+  width: 300px;
+  border-radius: 20px;
+  margin: 20px;
+  padding: 20px;
+}
+.col-lg-i output {
+  color: #363020;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+}
+.col-lg-i a {
+  margin: 10px;
+  color: #363020;
+  font-weight: bolder;
+}
+.col-lg-i h1 {
+  background-color: #363020;
+  padding: 20px;
+  border-radius: 20px;
+  font-size: 20px bolder;
+  color: white;
+}
+.col-lg-i img {
+  height: 200px;
+  width: 200px;
+  border-radius: 250px;
+  border: solid 10px #363020;
+  margin: 10px;
+}
+.col-lg-i form {
+  background-color: white;
+  margin: 10px;
+}
+.col-lg-i label {
+  color: #363020;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 25px;
+  margin: 20px;
+}
+.col-lg-i select {
+  width: 300px;
+  padding: 10px;
+  border-radius: 30px;
+}
+.col-lg-i i {
+  color: #363020;
+  float: right;
+  margin: 10px;
+}
+.col-lg-i p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+  color: #363020;
+}
+
+.col-lg-i {
+  padding: 5px;
+  background-color: white;
+  border-radius: 20px;
+  border: solid 5px #363020;
+  line-height: 10px;
+  text-align: center;
+  box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
+}
+.col-lg-i input {
+  height: 30px;
+  width: 300px;
+  border-radius: 20px;
+  margin: 20px;
+  padding: 20px;
+}
+.col-lg-i output {
+  color: #363020;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+}
+.col-lg-i a {
+  margin: 10px;
+  color: #363020;
+  font-weight: bolder;
+}
+.col-lg-i h1 {
+  background-color: #363020;
+  padding: 20px;
+  border-radius: 20px;
+  font-size: 20px bolder;
+  color: white;
+}
+.col-lg-i img {
+  height: 200px;
+  width: 200px;
+  border-radius: 250px;
+  border: solid 10px #363020;
+  margin: 10px;
+}
+.col-lg-i form {
+  background-color: white;
+  margin: 10px;
+}
+.col-lg-i label {
+  color: #363020;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 25px;
+  margin: 20px;
+}
+.col-lg-i select {
+  width: 300px;
+  padding: 10px;
+  border-radius: 30px;
+}
+.col-lg-i i {
+  color: #363020;
+  float: right;
+  margin: 10px;
+}
+.col-lg-i p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+  color: #363020;
+}
+
+.col-lg-i {
+  padding: 5px;
+  background-color: white;
+  border-radius: 20px;
+  border: solid 5px #363020;
+  line-height: 10px;
+  text-align: center;
+  box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
+}
+.col-lg-i input {
+  height: 30px;
+  width: 300px;
+  border-radius: 20px;
+  margin: 20px;
+  padding: 20px;
+}
+.col-lg-i output {
+  color: #363020;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+}
+.col-lg-i a {
+  margin: 10px;
+  color: #363020;
+  font-weight: bolder;
+}
+.col-lg-i h1 {
+  background-color: #363020;
+  padding: 20px;
+  border-radius: 20px;
+  font-size: 20px bolder;
+  color: white;
+}
+.col-lg-i img {
+  height: 200px;
+  width: 200px;
+  border-radius: 250px;
+  border: solid 10px #363020;
+  margin: 10px;
+}
+.col-lg-i form {
+  background-color: white;
+  margin: 10px;
+}
+.col-lg-i label {
+  color: #363020;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 25px;
+  margin: 20px;
+}
+.col-lg-i select {
+  width: 300px;
+  padding: 10px;
+  border-radius: 30px;
+}
+.col-lg-i i {
+  color: #363020;
+  float: right;
+  margin: 10px;
+}
+.col-lg-i p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+  color: #363020;
+}
+
+.col-lg-i {
+  padding: 5px;
+  background-color: white;
+  border-radius: 20px;
+  border: solid 5px #363020;
+  line-height: 10px;
+  text-align: center;
+  box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
+}
+.col-lg-i input {
+  height: 30px;
+  width: 300px;
+  border-radius: 20px;
+  margin: 20px;
+  padding: 20px;
+}
+.col-lg-i output {
+  color: #363020;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+}
+.col-lg-i a {
+  margin: 10px;
+  color: #363020;
+  font-weight: bolder;
+}
+.col-lg-i h1 {
+  background-color: #363020;
+  padding: 20px;
+  border-radius: 20px;
+  font-size: 20px bolder;
+  color: white;
+}
+.col-lg-i img {
+  height: 200px;
+  width: 200px;
+  border-radius: 250px;
+  border: solid 10px #363020;
+  margin: 10px;
+}
+.col-lg-i form {
+  background-color: white;
+  margin: 10px;
+}
+.col-lg-i label {
+  color: #363020;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 25px;
+  margin: 20px;
+}
+.col-lg-i select {
+  width: 300px;
+  padding: 10px;
+  border-radius: 30px;
+}
+.col-lg-i i {
+  color: #363020;
+  float: right;
+  margin: 10px;
+}
+.col-lg-i p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+  color: #363020;
+}
+
+.col-lg-i {
+  padding: 5px;
+  background-color: white;
+  border-radius: 20px;
+  border: solid 5px #363020;
+  line-height: 10px;
+  text-align: center;
+  box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
+}
+.col-lg-i input {
+  height: 30px;
+  width: 300px;
+  border-radius: 20px;
+  margin: 20px;
+  padding: 20px;
+}
+.col-lg-i output {
+  color: #363020;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+}
+.col-lg-i a {
+  margin: 10px;
+  color: #363020;
+  font-weight: bolder;
+}
+.col-lg-i h1 {
+  background-color: #363020;
+  padding: 20px;
+  border-radius: 20px;
+  font-size: 20px bolder;
+  color: white;
+}
+.col-lg-i img {
+  height: 200px;
+  width: 200px;
+  border-radius: 250px;
+  border: solid 10px #363020;
+  margin: 10px;
+}
+.col-lg-i form {
+  background-color: white;
+  margin: 10px;
+}
+.col-lg-i label {
+  color: #363020;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 25px;
+  margin: 20px;
+}
+.col-lg-i select {
+  width: 300px;
+  padding: 10px;
+  border-radius: 30px;
+}
+.col-lg-i i {
+  color: #363020;
+  float: right;
+  margin: 10px;
+}
+.col-lg-i p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+  color: #363020;
+}
+
+.col-lg-i {
+  padding: 5px;
+  background-color: white;
+  border-radius: 20px;
+  border: solid 5px #363020;
+  line-height: 10px;
+  text-align: center;
+  box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
+}
+.col-lg-i input {
+  height: 30px;
+  width: 300px;
+  border-radius: 20px;
+  margin: 20px;
+  padding: 20px;
+}
+.col-lg-i output {
+  color: #363020;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+}
+.col-lg-i a {
+  margin: 10px;
+  color: #363020;
+  font-weight: bolder;
+}
+.col-lg-i h1 {
+  background-color: #363020;
+  padding: 20px;
+  border-radius: 20px;
+  font-size: 20px bolder;
+  color: white;
+}
+.col-lg-i img {
+  height: 200px;
+  width: 200px;
+  border-radius: 250px;
+  border: solid 10px #363020;
+  margin: 10px;
+}
+.col-lg-i form {
+  background-color: white;
+  margin: 10px;
+}
+.col-lg-i label {
+  color: #363020;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 25px;
+  margin: 20px;
+}
+.col-lg-i select {
+  width: 300px;
+  padding: 10px;
+  border-radius: 30px;
+}
+.col-lg-i i {
+  color: #363020;
+  float: right;
+  margin: 10px;
+}
+.col-lg-i p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+  color: #363020;
+}
+
+.col-lg-i {
+  padding: 5px;
+  background-color: white;
+  border-radius: 20px;
+  border: solid 5px #363020;
+  line-height: 10px;
+  text-align: center;
+  box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
+}
+.col-lg-i input {
+  height: 30px;
+  width: 300px;
+  border-radius: 20px;
+  margin: 20px;
+  padding: 20px;
+}
+.col-lg-i output {
+  color: #363020;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+}
+.col-lg-i a {
+  margin: 10px;
+  color: #363020;
+  font-weight: bolder;
+}
+.col-lg-i h1 {
+  background-color: #363020;
+  padding: 20px;
+  border-radius: 20px;
+  font-size: 20px bolder;
+  color: white;
+}
+.col-lg-i img {
+  height: 200px;
+  width: 200px;
+  border-radius: 250px;
+  border: solid 10px #363020;
+  margin: 10px;
+}
+.col-lg-i form {
+  background-color: white;
+  margin: 10px;
+}
+.col-lg-i label {
+  color: #363020;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 25px;
+  margin: 20px;
+}
+.col-lg-i select {
+  width: 300px;
+  padding: 10px;
+  border-radius: 30px;
+}
+.col-lg-i i {
+  color: #363020;
+  float: right;
+  margin: 10px;
+}
+.col-lg-i p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+  color: #363020;
+}
+
+.col-lg-i {
+  padding: 5px;
+  background-color: white;
+  border-radius: 20px;
+  border: solid 5px #363020;
+  line-height: 10px;
+  text-align: center;
+  box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
+}
+.col-lg-i input {
+  height: 30px;
+  width: 300px;
+  border-radius: 20px;
+  margin: 20px;
+  padding: 20px;
+}
+.col-lg-i output {
+  color: #363020;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+}
+.col-lg-i a {
+  margin: 10px;
+  color: #363020;
+  font-weight: bolder;
+}
+.col-lg-i h1 {
+  background-color: #363020;
+  padding: 20px;
+  border-radius: 20px;
+  font-size: 20px bolder;
+  color: white;
+}
+.col-lg-i img {
+  height: 200px;
+  width: 200px;
+  border-radius: 250px;
+  border: solid 10px #363020;
+  margin: 10px;
+}
+.col-lg-i form {
+  background-color: white;
+  margin: 10px;
+}
+.col-lg-i label {
+  color: #363020;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 25px;
+  margin: 20px;
+}
+.col-lg-i select {
+  width: 300px;
+  padding: 10px;
+  border-radius: 30px;
+}
+.col-lg-i i {
+  color: #363020;
+  float: right;
+  margin: 10px;
+}
+.col-lg-i p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+  color: #363020;
+}
+
+.topic {
+  background-color: #363020;
+  padding: 10px;
+  border-radius: 30px;
+  margin: 5px;
+  box-shadow: 8px 8px 12px #363020;
+}
+.topic a {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  color: #d7d9b1;
+}
+.topic p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+  color: #d7d9b1;
+}
+
+#lost {
+  color: #3c6c7c;
+}
+
+.logo img {
+  height: 150px;
+  width: 150px;
+  border-radius: 20px;
+}
+
+/*# sourceMappingURL=boardopen.css.map */
