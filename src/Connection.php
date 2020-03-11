@@ -1,5 +1,10 @@
 <?php
+session_save_path('');
+session_start();
+
+
 require_once('class/UserGateway.php');
+
 
 const USER = "email";
 const PWD = "password";
@@ -13,7 +18,8 @@ if ($_SERVER["REQUEST_METHOD"] = "POST") {
     if (isset($email) && isset($pwd) && ($email = filter_var($email, FILTER_VALIDATE_EMAIL))) {
         if (checkdb($email, $pwd)) {
             $ugate = new UserGateway();
-            $_SESSION['ID'] = $ugate->getIdFrom($email);
+            $id = $ugate->getIdFrom($email);
+            $_SESSION['USER'] = $id;
             header('http/1.1 302 OK');
             header('Location: boards.php');
             exit();

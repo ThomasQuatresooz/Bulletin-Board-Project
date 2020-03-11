@@ -99,7 +99,7 @@ class UserGateway
         try {
             $db = DatabaseManager::getInstance()->getDatabase();
             $sth = $db->prepare($statement);
-            return ($sth->execute([$email])) ? $sth->fetch()['password'] : null;
+            return ($sth->execute([$email])) ? $sth->fetch()['idUsers'] : null;
         } catch (\PDOException $th) {
             echo ($th->getMessage());
         }

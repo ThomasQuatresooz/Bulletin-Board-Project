@@ -1,8 +1,16 @@
 <?php
-session_start(['use_trans_sid' => 1]);
+
+session_start();
+if (is_null($_SESSION['USER'])) {
+    header('Location: index.php');
+    exit();
+}
+?>
+
+<?php
 spl_autoload_register(function ($class) {
     include 'class/' . $class . '.php';
-})
+});
 ?>
 
 <!DOCTYPE html>
@@ -51,31 +59,35 @@ spl_autoload_register(function ($class) {
     $boards = $boardGT->findAll();
     if (isset($boards)) {
         foreach ($boards as $board) {
-            echo '<div class="container">
+            echo '
+        <div class="container">
             <div class="row">
                 <div class="col-lg-6">
                     <h1> ' . $board->getName() . '</h1>
                     </br>
                     <p>' . $board->getDescription() . '</p></br>
-                    <a href="topic.php">Create new Topic</a>
-                </div>
-                ';
-            echo '<div class="col-lg-6">';
+                    <a href="topicCreation.php?id=' . $board->getIdboards() . '">Create new Topic</a>
+                </div>';
+            echo '
+                    <div class="col-lg-6">';
             $topicGT = new TopicGateway();
             foreach ($topicGT->findMostRecentByBoardId($board->getIdboards()) as $topic) {
                 echo ('<div class="row">
-                <div class="col-lg-12">
-                    <a href="#">' . $topic->getName() . '</a>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta
-                        doloribus odio dolorum quos, dolore, at fuga sed numquam
-                        delectus consequatur, eos consectetur corrupti quibusdam vero
-                        modi unde iste blanditiis. Repudiandae!
-                    </p>
-                </div>
-            </div>');
+                        <div class="col-lg-12">
+                            <a href="#">' . $topic->getName() . '</a>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta
+                                doloribus odio dolorum quos, dolore, at fuga sed numquam
+                                delectus consequatur, eos consectetur corrupti quibusdam vero
+                                modi unde iste blanditiis. Repudiandae!
+                            </p>
+                        </div>
+                    </div>');
             }
-            echo '</div>';
+            echo '
+                </div>
+            </div>
+        </div>';
         }
     }
     ?>

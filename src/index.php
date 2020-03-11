@@ -1,11 +1,16 @@
 <?php
-session_start(['use_trans_sid' => 1]);
+session_save_path('');
+session_start();
+
+
+
 spl_autoload_register(function ($class) {
     include 'class/' . $class . '.php';
 });
-
-// require_once('./class/Connection.php');
-if (isset($SESSION["userID"]))
+if (isset($_SESSION["USER"])){
+    header('Location: boards.php');
+    exit();
+}
 ?>
 
 <!doctype html>
