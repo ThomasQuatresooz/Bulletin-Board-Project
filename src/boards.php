@@ -1,3 +1,18 @@
+<?php
+
+session_start();
+if (is_null($_SESSION['USER'])) {
+    header('Location: index.php');
+    exit();
+}
+?>
+
+<?php
+spl_autoload_register(function ($class) {
+    include 'class/' . $class . '.php';
+});
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,194 +53,44 @@
                 <h2>Boards</h2>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-6">
-                <h1>General</h1>
-                </br>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime harum consectetur explicabo officia, cum repudiandae quam nisi perferendis quaerat, illum at vero repellendus commodi sint, molestiae aspernatur sed eos. Assumenda.</p></br>
-                <a href="topic.html">Create new Topic</a>
-            </div>
-            <div class="col-lg-6">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <a href="#">Topic 1</a>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta
-                            doloribus odio dolorum quos, dolore, at fuga sed numquam
-                            delectus consequatur, eos consectetur corrupti quibusdam vero
-                            modi unde iste blanditiis. Repudiandae!
-                        </p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <a href="#">Topic 2</a>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta
-                            doloribus odio dolorum quos, dolore, at fuga sed numquam
-                            delectus consequatur, eos consectetur corrupti quibusdam vero
-                            modi unde iste blanditiis. Repudiandae!
-                        </p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <a href="#">Topic 3</a>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta
-                            doloribus odio dolorum quos, dolore, at fuga sed numquam
-                            delectus consequatur, eos consectetur corrupti quibusdam vero
-                            modi unde iste blanditiis. Repudiandae!
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <h1>Development</h1>
-                </br>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime harum consectetur explicabo officia, cum repudiandae
-                    quam nisi perferendis quaerat, illum at vero repellendus commodi sint, molestiae aspernatur sed eos. Assumenda.</p></br>
-                <a href="topic.html">Create new Topic</a>
-            </div>
-            <div class="col-lg-6">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <a href="#">Topic 1</a>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta
-                            doloribus odio dolorum quos, dolore, at fuga sed numquam
-                            delectus consequatur, eos consectetur corrupti quibusdam vero
-                            modi unde iste blanditiis. Repudiandae!
-                        </p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <a href="#">Topic 2</a>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta
-                            doloribus odio dolorum quos, dolore, at fuga sed numquam
-                            delectus consequatur, eos consectetur corrupti quibusdam vero
-                            modi unde iste blanditiis. Repudiandae!
-                        </p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <a href="#">Topic 3</a>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta
-                            doloribus odio dolorum quos, dolore, at fuga sed numquam
-                            delectus consequatur, eos consectetur corrupti quibusdam vero
-                            modi unde iste blanditiis. Repudiandae!
-                        </p>
-                    </div>
+    <?php
+    $boardGT = new BoardGateway();
+    $boards = $boardGT->findAll();
+    if (isset($boards)) {
+        foreach ($boards as $board) {
+            echo '
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h1> ' . $board->getName() . '</h1>
+                    </br>
+                    <p>' . $board->getDescription() . '</p></br>
+                    <a href="topicCreation.php?id=' . $board->getIdboards() . '">Create new Topic</a>
+                </div>';
+            echo '
+                    <div class="col-lg-6">';
+            $topicGT = new TopicGateway();
+            foreach ($topicGT->findMostRecentByBoardId($board->getIdboards()) as $topic) {
+                echo ('<div class="row">
+                        <div class="col-lg-12">
+                            <a href="#">' . $topic->getName() . '</a>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta
+                                doloribus odio dolorum quos, dolore, at fuga sed numquam
+                                delectus consequatur, eos consectetur corrupti quibusdam vero
+                                modi unde iste blanditiis. Repudiandae!
+                            </p>
+                        </div>
+                    </div>');
+            }
+            echo '
                 </div>
             </div>
-        </div>
-    </div>
-
-
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <h1>Smalltalk</h1>
-                </br>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime harum consectetur explicabo officia, cum repudiandae
-                    quam nisi perferendis quaerat, illum at vero repellendus commodi sint, molestiae aspernatur sed eos. Assumenda.</p></br>
-                <a href="topic.html">Create new Topic</a>
-            </div>
-            <div class="col-lg-6">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <a href="#">Topic 1</a>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta
-                            doloribus odio dolorum quos, dolore, at fuga sed numquam
-                            delectus consequatur, eos consectetur corrupti quibusdam vero
-                            modi unde iste blanditiis. Repudiandae!
-                        </p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <a href="#">Topic 2</a>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta
-                            doloribus odio dolorum quos, dolore, at fuga sed numquam
-                            delectus consequatur, eos consectetur corrupti quibusdam vero
-                            modi unde iste blanditiis. Repudiandae!
-                        </p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <a href="#">Topic 3</a>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta
-                            doloribus odio dolorum quos, dolore, at fuga sed numquam
-                            delectus consequatur, eos consectetur corrupti quibusdam vero
-                            modi unde iste blanditiis. Repudiandae!
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <h1>Events</h1>
-                </br>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime harum consectetur explicabo officia, cum repudiandae
-                    quam nisi perferendis quaerat, illum at vero repellendus commodi sint, molestiae aspernatur sed eos. Assumenda.</p></br>
-                <a href="topic.html">Create new Topic</a>
-            </div>
-            <div class="col-lg-6">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <a href="#">Topic 1</a>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta
-                            doloribus odio dolorum quos, dolore, at fuga sed numquam
-                            delectus consequatur, eos consectetur corrupti quibusdam vero
-                            modi unde iste blanditiis. Repudiandae!
-                        </p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <a href="#">Topic 2</a>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta
-                            doloribus odio dolorum quos, dolore, at fuga sed numquam
-                            delectus consequatur, eos consectetur corrupti quibusdam vero
-                            modi unde iste blanditiis. Repudiandae!
-                        </p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <a href="#">Topic 3</a>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta
-                            doloribus odio dolorum quos, dolore, at fuga sed numquam
-                            delectus consequatur, eos consectetur corrupti quibusdam vero
-                            modi unde iste blanditiis. Repudiandae!
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
+        </div>';
+        }
+    }
+    ?>
 </body>
 
 <footer>

@@ -1,10 +1,16 @@
 <?php
-session_start(['use_trans_sid' => 1]);
+session_save_path('');
+session_start();
+
+
+
 spl_autoload_register(function ($class) {
     include 'class/' . $class . '.php';
 });
-// require_once('./class/Connection.php');
-if (isset($SESSION["userID"]))
+if (isset($_SESSION["USER"])){
+    header('Location: boards.php');
+    exit();
+}
 ?>
 
 <!doctype html>
@@ -27,12 +33,12 @@ if (isset($SESSION["userID"]))
         <div class="row">
             <div class="col-lg-5">
                 <h2>Sign In</h2>
-                <form action="sign.php" method="POST">
-                    <input type="text" name="" placeholder="Email" /></br>
-                    <input type="password" name="" placeholder="Password" /></br>
-                    <a href="profil.html"><input id="bouton" type="submit" name="" value="Login" /></a></br>
+                <form action="Connection.php" method="POST">
+                    <input type="text" name="email" placeholder="Email" /></br>
+                    <input type="password" name="password" placeholder="Password" /></br>
+                    <a href="boards.php"><input id="bouton" type="submit" name="" value="Login" /></a></br>
                 </form>
-                <a href="#" id="lost">Lost your passeword?</a>
+                <a href="#" id="lost">Lost your password ?</a>
             </div>
             <div class="col-lg-2">
                 <div class="logo">
@@ -41,21 +47,14 @@ if (isset($SESSION["userID"]))
             </div>
             <div class="col-lg-5">
                 <h2>Sign Up</h2>
-                <form>
-                    <input type="text" name="" placeholder="Firstname" /></br>
+                <form action="Inscription.php" method="POST">
+                    <input type="text" name="nickname" placeholder="Firstname" /></br>
                     <input type="text" name="" placeholder="Lastname" /></br>
-                    <input type="text" name="" placeholder="Email" /></br>
-                    <input type="password" name="" placeholder="Create Password" /></br>
+                    <input type="text" name="email" placeholder="Email" /></br>
+                    <input type="password" name="password" placeholder="Create Password" /></br>
                     <a href="profil.html"><input id="bouton" type="submit" name="" value="Create account" /></a></br>
                 </form>
-
             </div>
-
-            <a href="profil.php">Profil</a>
-            <a href="boards.php">Boards</a>
-            <a href="topics.php">topics</a>
-
-
         </div>
     </div>
 
@@ -71,7 +70,7 @@ if (isset($SESSION["userID"]))
 // $parse = new Parsedown();
 
 
-// $file = file_get_contents('./readme.md');
+// $file = file_get_contents('readme.md');
 // echo $parse->text($file);
 // * * *
 // ## Part one - basics

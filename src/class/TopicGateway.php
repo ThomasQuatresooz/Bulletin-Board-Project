@@ -34,7 +34,7 @@ class TopicGateway
         }
     }
 
-    public function createTopic($name, $idAuthor, $idBoard) :int
+    public function createTopic($name, $idAuthor, $idBoard) :?int
     {
         $statement = 'INSERT INTO topics (name, Users_idUsers, boards_idboards) VALUES (?, ?, ?)';
 
