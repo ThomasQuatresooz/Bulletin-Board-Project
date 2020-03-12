@@ -56,6 +56,7 @@ spl_autoload_register(function ($class) {
     </div>
     <?php
     $boardGT = new BoardGateway();
+    $mgate = new MessageGateway();
     $boards = $boardGT->findAll();
     if (isset($boards)) {
         foreach ($boards as $board) {
@@ -63,7 +64,9 @@ spl_autoload_register(function ($class) {
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
-                    <h1> ' . $board->getName() . '</h1>
+                    <a href="boardopen.php?id=' . $board->getIdboards() . '">
+                        <h1> ' . $board->getName() . '</h1>
+                    </a>
                     </br>
                     <p>' . $board->getDescription() . '</p></br>
                     <a href="topicCreation.php?id=' . $board->getIdboards() . '">Create new Topic</a>
@@ -72,14 +75,12 @@ spl_autoload_register(function ($class) {
                     <div class="col-lg-6">';
             $topicGT = new TopicGateway();
             foreach ($topicGT->findMostRecentByBoardId($board->getIdboards()) as $topic) {
+                $msg = $mgate->findXByTopicId($topic->getIdTopics())[0];
                 echo ('<div class="row">
                         <div class="col-lg-12">
-                            <a href="#">' . $topic->getName() . '</a>
+                            <a href="pagetopic.php?id=' . $topic->getIdTopics() . '">' . $topic->getName() . '</a>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta
-                                doloribus odio dolorum quos, dolore, at fuga sed numquam
-                                delectus consequatur, eos consectetur corrupti quibusdam vero
-                                modi unde iste blanditiis. Repudiandae!
+                                ' . $msg->getContent() . '
                             </p>
                         </div>
                     </div>');

@@ -5,7 +5,7 @@ class Message{
     private $date_edit;
     private $idmessages;
     private $status;
-    private $author;
+    private $Users_idUsers;
 
 
     /**
@@ -106,5 +106,13 @@ class Message{
         $this->content = $content;
 
         return $this;
+    }
+
+    /**
+     * Get the value of Users_idUsers
+     */ 
+    public function getIdUsers()
+    {
+        return $this->Users_idUsers;
     }
 }

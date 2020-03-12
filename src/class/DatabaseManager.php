@@ -1,5 +1,6 @@
 <?php
-class DatabaseManager {
+class DatabaseManager
+{
 
     private const DB_NAME = "test";
     private const HOST = "mysql:3306";
@@ -9,7 +10,7 @@ class DatabaseManager {
     private static $instance = null;
     private $database;
 
-    public static function getInstance() : DatabaseManager  
+    public static function getInstance(): DatabaseManager
     {
         if (self::$instance == null) {
             self::$instance = new static;
@@ -20,13 +21,14 @@ class DatabaseManager {
     protected function __construct()
     {
         try {
-            $db = new PDO("mysql:dbname=" . $this::DB_NAME . ";host=" . $this::HOST, $this::USER, $this::PWD,array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8mb4"));
+            $db = new PDO("mysql:dbname=" . $this::DB_NAME . ";host=" . $this::HOST, $this::USER, $this::PWD, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8mb4"));
+            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (\Throwable $th) {
             echo 'Connection to database failed : ' . $th->getMessage();
         }
         $this->database = $db;
     }
-    
+
     public function getDatabase()
     {
         return $this->database;

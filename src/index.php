@@ -7,7 +7,7 @@ session_start();
 spl_autoload_register(function ($class) {
     include 'class/' . $class . '.php';
 });
-if (isset($_SESSION["USER"])){
+if (isset($_SESSION["USER"])) {
     header('Location: boards.php');
     exit();
 }
@@ -47,12 +47,11 @@ if (isset($_SESSION["USER"])){
             </div>
             <div class="col-lg-5">
                 <h2>Sign Up</h2>
-                <form action="Inscription.php" method="POST">
-                    <input type="text" name="nickname" placeholder="Firstname" /></br>
-                    <input type="text" name="" placeholder="Lastname" /></br>
+                <form action="inscription.php" method="POST">
+                    <input type="text" name="nickname" placeholder="Nickname" /></br>
                     <input type="text" name="email" placeholder="Email" /></br>
                     <input type="password" name="password" placeholder="Create Password" /></br>
-                    <a href="profil.html"><input id="bouton" type="submit" name="" value="Create account" /></a></br>
+                    <a href="boards.php"><input id="bouton" type="submit" name="" value="Create account" /></a></br>
                 </form>
             </div>
         </div>

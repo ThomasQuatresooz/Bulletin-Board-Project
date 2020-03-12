@@ -1,5 +1,6 @@
 <?php
 require_once("DatabaseManager.php");
+require_once("User.php");
 
 class UserGateway
 {
@@ -17,20 +18,21 @@ class UserGateway
     //     }
     // }
 
-    // public function find($id)
-    // {
-    //     $statement = 'SELECT * FROM users WHERE id = ?';
+    public function find($id): ?User
+    {
+        $statement = 'SELECT idUsers,name,email,signature FROM users WHERE idUsers = ?';
 
-    //     try {
-    //         $db = DatabaseManager::getInstance()->getDatabase();
-    //         $sth = $db->prepare($statement);
-    //         $sth->execute([$id]);
-    //         $users = $sth->fetchAll();
-    //         print_r($users[0]['email']);
-    //     } catch (\PDOException $th) {
-    //         echo ($th->getMessage());
-    //     }
-    // }
+        try {
+            $db = DatabaseManager::getInstance()->getDatabase();
+
+            $sth = $db->prepare($statement);
+            $sth->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, 'User');
+
+            return $sth->execute([$id]) ? $sth->fetch() : null;
+        } catch (\PDOException $th) {
+            echo ($th->getMessage());
+        }
+    }
 
     public function insert($name, $pwd, $email): ?int
     {
