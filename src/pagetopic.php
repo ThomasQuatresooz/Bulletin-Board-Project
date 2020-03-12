@@ -68,8 +68,12 @@ spl_autoload_register(function ($class) {
       </div>
       <div class="col-lg-10">
         <div class="row">
-          <div class="col-lg-12">
+          <div class="col-lg-10">
             <p>' . $message->getContent() . '</p>
+          </div>
+          <div class="col-lg-2 text-right">
+          <a class="h-100 w-100" href=""><i class="fas fa-pen"></i></a>
+          <a class="h-100 w-100" href=""><i class="fas fa-times"></i></a>
           </div>
         </div>
       </div>
