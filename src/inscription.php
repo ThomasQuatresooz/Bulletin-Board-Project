@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] = "POST") {
 
     if (isset($email) && isset($pwd) && isset($nickname) && ($email = filter_var($email, FILTER_VALIDATE_EMAIL))) {
       if (checkdb($nickname, $email)) {
-        if ($idUser = createUser($nickname, $email, password_hash($pwd, PASSWORD_DEFAULT)) !== null) {
+        if (($idUser = createUser($nickname, $email, password_hash($pwd, PASSWORD_DEFAULT))) !== null) {
           $_SESSION['USER'] = $idUser;
           header('http/1.1 200 OK');
           header('Location: boards.php');

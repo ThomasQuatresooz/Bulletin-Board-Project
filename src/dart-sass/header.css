@@ -88,7 +88,7 @@ a {
 }
 
 .menu .burger:checked + nav {
-  height: calc(100vh - 50px);
+  height: 100vh;
   border-radius: 10px;
   display: flex;
 

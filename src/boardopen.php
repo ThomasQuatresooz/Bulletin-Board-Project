@@ -2,6 +2,7 @@
 spl_autoload_register(function ($class) {
   include 'class/' . $class . '.php';
 }); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,25 +16,7 @@ spl_autoload_register(function ($class) {
   <title>Board Open</title>
 </head>
 
-<header>
-  <div class="logo">
-    <img src="images/logo.jpg" />
-  </div>
-
-  <div class="menu">
-    <input class="burger" type="checkbox" />
-    <nav>
-      <input type="search" placeholder="Rechercher..." />
-      <a class="menu-link" href="boards.html">Boards</a>
-      <a class="menu-link" href="topic.html">Create a new topic</a>
-      <a class="menu-link" href="#">General</a>
-      <a class="menu-link" href="#">Development</a>
-      <a class="menu-link" href="#">Smalltalk</a>
-      <a class="menu-link" href="#">Events</a>
-      <a class="menu-link" href="sign-in-up-bootstrap.html">Connexion - Déconnexion</a>
-    </nav>
-  </div>
-</header>
+<?php require('header.php'); ?>
 
 <body>
   <div class="container">
@@ -55,7 +38,7 @@ spl_autoload_register(function ($class) {
 
   foreach ($topics as $topic) {
     $msg = $mgate->findXByTopicId($topic->getIdtopics())[0];
-      echo '
+    echo '
     <div class="container">
       <div class="row">
         <div class="col-lg-12">

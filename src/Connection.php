@@ -15,6 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] = "POST") {
     $email = $_POST[USER];
     $pwd = $_POST[PWD];
 
+
     if (isset($email) && isset($pwd) && ($email = filter_var($email, FILTER_VALIDATE_EMAIL))) {
         if (checkdb($email, $pwd)) {
             $ugate = new UserGateway();

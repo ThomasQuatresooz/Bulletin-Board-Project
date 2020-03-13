@@ -18,25 +18,8 @@ spl_autoload_register(function ($class) {
   <title>Page Topics</title>
 </head>
 
-<header>
-  <div class="logo">
-    <img src="images/logo.jpg" />
-  </div>
+<?php require('header.php'); ?>
 
-  <div class="menu">
-    <input class="burger" type="checkbox" />
-    <nav>
-      <input type="search" placeholder="Rechercher..." />
-      <a class="menu-link" href="boards.html">Boards</a>
-      <a class="menu-link" href="topic.html">Create a new topic</a>
-      <a class="menu-link" href="#">General</a>
-      <a class="menu-link" href="#">Development</a>
-      <a class="menu-link" href="#">Smalltalk</a>
-      <a class="menu-link" href="#">Events</a>
-      <a class="menu-link" href="sign-in-up-bootstrap.html">Connexion - Déconnexion</a>
-    </nav>
-  </div>
-</header>
 
 <body>
   <div class="container">
@@ -56,6 +39,8 @@ spl_autoload_register(function ($class) {
 
   $messages = $mgate->findAllByTopicId($topic->getIdtopics());
 
+  $parse = new Parsedown();
+
   foreach ($messages as $message) {
     $user = $ugate->find($message->getIdUsers());
     echo '
@@ -69,18 +54,23 @@ spl_autoload_register(function ($class) {
       <div class="col-lg-10">
         <div class="row">
           <div class="col-lg-10">
-            <p>' . $message->getContent() . '</p>
+            <p id="' . $message->getIdmessages() . '">' . $parse->line($message->getContent()) . '</p>
           </div>
-          <div class="col-lg-2 text-right">
-          <a class="h-100 w-100" href=""><i class="fas fa-pen"></i></a>
-          <a class="h-100 w-100" href=""><i class="fas fa-times"></i></a>
-          </div>
+          ';
+    if ($_SESSION['USER'] == $message->getIdUsers()) {
+      echo '<div class="col-lg-2 text-right">
+            <a class="h-100 w-100 editButton" data-id= ' . $message->getIdmessages() . '><i class="fas fa-pen"></i></a>
+            <a class="h-100 w-100" href="deleteMessage.php?id=' . $message->getIdmessages() . '"><i class="fas fa-times"></i></a>
+            </div> ';
+    };
+    echo '
+          
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-lg-8">
-        <p>Creation Date : ' . $message->getDate_creation() . ' - Edition Date : ' . $message->getDate_creation() . '</p>
+        <p>Creation Date : ' . $message->getDate_creation() . ' - Edition Date : ' . $message->getDate_edit() . '</p>
       </div>
       <div class="col-lg-4">
         <p>' . $user->getSignature() . '</p>
@@ -101,9 +91,18 @@ spl_autoload_register(function ($class) {
         </form>
       </div>
 
+      <template>
+        <form method="post">
+          <label for="message_input">Edit Message</label>
+          <textarea class="form-control" name="message" id="message_input" rows="3" data-emojiable='true'></textarea>
+          <a id="editDone" href="pagetopic.php?id=<?php echo $topic->getIdtopics() ?>"><button type="submit" class="btn btn-primary col-lg-6 mt-3">Send</button></a>
+        </form>
+      </template>
+
 
     </div>
   </div>
+
 
 
 
@@ -124,8 +123,11 @@ spl_autoload_register(function ($class) {
       // You may want to delay this step if you have dynamically created input fields that appear later in the loading process
       // It can be called as many times as necessary; previously converted input fields will not be converted again
       window.emojiPicker.discover();
+
     });
   </script>
+  <script src="editMessage.js"></script>
+
 
 </body>
 

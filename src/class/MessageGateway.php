@@ -34,23 +34,36 @@ class MessageGateway
 
     public function editMsg($id, $content): bool
     {
-        $date = date('Y-m-d H:i:s');
+        // $date = date('Y-m-d H:i:s');
         try {
             $db = DatabaseManager::getInstance()->getDatabase();
-            $sth = $db->prepare('UPDATE `messages` SET `content` = ? , `date_edit` = ? WHERE `messages`.`idmessages` = ?');
-            return $sth->execute([$content, $date, $id]);
+            $sth = $db->prepare('UPDATE `messages` SET `content` = ? , `date_edit` = CURRENT_TIME() WHERE `messages`.`idmessages` = ?');
+            return $sth->execute([$content, $id]);
         } catch (\PDOException $th) {
             echo ($th->getMessage());
         }
     }
 
-    public function addMsg($content, $userID, $topicID) : bool
+    public function addMsg($content, $userID, $topicID): bool
     {
         $date = date('Y-m-d H:i:s');
         try {
             $db = DatabaseManager::getInstance()->getDatabase();
             $sth = $db->prepare('INSERT INTO `messages`(`content`, `date_creation`, `date_edit`, `Users_idUsers`, `topics_idtopics`, `status`) VALUES (?,?,?,?,?,?)');
             return $sth->execute([$content, $date, $date, $userID, $topicID, 1]);
+        } catch (\PDOException $th) {
+            echo ($th->getMessage());
+        }
+    }
+
+    public function deleteMessage($id): bool
+    {
+        $statement = 'DELETE FROM `messages` WHERE `messages`.`idmessages` = ?';
+        try {
+            $db = DatabaseManager::getInstance()->getDatabase();
+            $sth = $db->prepare($statement);
+
+            return $sth->execute([$id]);
         } catch (\PDOException $th) {
             echo ($th->getMessage());
         }

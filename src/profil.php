@@ -1,3 +1,16 @@
+<?php
+session_start();
+if (is_null($_SESSION['USER'])) {
+    header('http/1.1 403 Forbidden');
+    header('Location: index.php');
+    exit();
+}
+
+spl_autoload_register(function ($class) {
+    include 'class/' . $class . '.php';
+});
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -11,54 +24,37 @@
     <link href="dart-sass/profil.css" rel="stylesheet" />
     <title>Profile page</title>
 </head>
-<header>
-    <div class="logo">
-        <img src="images/logo.jpg">
-    </div>
-    <div class="menu">
-        <input class="burger" type="checkbox" />
-        <nav>
-            <input type="search" placeholder="Rechercher..." />
-            <a class="menu-link" href="boards.html">Boards</a>
-            <a class="menu-link" href="topic.html">Create a new topic</a>
-            <a class="menu-link" href="#">General</a>
-            <a class="menu-link" href="#">Development</a>
-            <a class="menu-link" href="#">Smalltalk</a>
-            <a class="menu-link" href="#">Events</a>
-            <a class="menu-link" href="sign-in-up-bootstrap.html">Connexion - Déconnexion</a>
-        </nav>
-    </div>
-</header>
+
+<?php require('header.php');
+$ugate = new UserGateway();
+$user = $ugate->find($_SESSION['USER']);
+?>
 
 <body>
     <div class="container">
         <div class="row">
-            <section class="col-lg-6">
+            <section class="col-lg-4">
                 <form action="profil.php" method="post">
                     <output type="text" name="nickname">
-                        <p>Nickname</p>
+                        <p><?php echo  $user->getName() ?></p>
                     </output></br>
-                    <img src="https://www.gravatar.com/avatar/HASH"></br>
+                    <?php echo ('<img src="https://www.gravatar.com/avatar/' . (md5(strtolower(trim($user->getEmail())))) . '?d=robohash"></br>') ?>
                     <output type="text" name="email">
-                        <p>Email</p>
+                        <p><?php echo  $user->getEmail() ?></p>
                     </output>
                 </form>
             </section>
-            <section class="col-lg-6">
-                <a href="modification.php" <i class="fas fa-pencil-alt"></i></a></br></br>
-                <form action="profil.php" method="post">
-                    <label>Firstname</label></br>
-                    <output type="text" name="firstname">
-                        <p>Firstname</p>
-                    </output></br>
-                    <label>Lastname</label></br>
-                    <output type="text" name="lastname">
-                        <p>Lastname</p>
-                    </output></br>
-                    <label>Signature</label></br>
-                    <output type="text" name="signature">
-                        <p>Signature</p>
-                    </output></br>
+            <section class="col-lg-8">
+                <form method="POST" action="modifUser.php">
+                    <label>Nickname :</label>
+                    <input type="text" name="nickname" placeholder="Nickname" value="<?php echo $user->getName(); ?>"></br>
+                    <label>Signature :</label>
+                    <input type="text" name="signature" placeholder="Signature" value="<?php echo $user->getSignature(); ?>"></br>
+                    <label>Password :</label>
+                    <input type="password" name="password" placeholder="Password"></br>
+                    <label>Confirmation :</label>
+                    <input type="password" name="confirmpassword" placeholder="Password confirmation"></br>
+                    <a href="profil.php"><input id="bouton" type="submit" value="Edit my profile !" /></a>
                 </form>
             </section>
         </div>

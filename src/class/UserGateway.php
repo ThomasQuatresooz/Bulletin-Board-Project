@@ -20,7 +20,7 @@ class UserGateway
 
     public function find($id): ?User
     {
-        $statement = 'SELECT idUsers,name,email,signature FROM users WHERE idUsers = ?';
+        $statement = 'SELECT idUsers,name,email,password,signature FROM users WHERE idUsers = ?';
 
         try {
             $db = DatabaseManager::getInstance()->getDatabase();

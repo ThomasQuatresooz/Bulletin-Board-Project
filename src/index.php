@@ -2,8 +2,6 @@
 session_save_path('');
 session_start();
 
-
-
 spl_autoload_register(function ($class) {
     include 'class/' . $class . '.php';
 });
