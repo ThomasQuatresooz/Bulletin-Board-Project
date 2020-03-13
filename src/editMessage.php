@@ -16,9 +16,10 @@ $mgate = new MessageGateway();
 
 if (isset($_GET[ID])) {
     if (isset($_POST[MESSAGE])) {
-        ($mgate->editMsg($_GET[ID], $_POST[MESSAGE])) ? header('http/1.1 200') : header('http/1.1 400');
+        ($mgate->editMsg($_GET[ID], $_POST[MESSAGE], 1)) ? header('http/1.1 200') : header('http/1.1 400');
+    } else {
+        ($mgate->editMsg($_GET[ID], 'Message deleted', 0)) ? header('http/1.1 200') : header('http/1.1 400');
     }
-    ($mgate->editMsg($_GET[ID], 'Message deleted', 0)) ? header('http/1.1 200') : header('http/1.1 400');
 }
 header('Location: ' . $_SERVER['HTTP_REFERER']);
 exit();
