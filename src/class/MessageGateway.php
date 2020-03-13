@@ -32,13 +32,13 @@ class MessageGateway
         }
     }
 
-    public function editMsg($id, $content): bool
+    public function editMsg($id, $content,$status=1): bool
     {
         // $date = date('Y-m-d H:i:s');
         try {
             $db = DatabaseManager::getInstance()->getDatabase();
-            $sth = $db->prepare('UPDATE `messages` SET `content` = ? , `date_edit` = CURRENT_TIME() WHERE `messages`.`idmessages` = ?');
-            return $sth->execute([$content, $id]);
+            $sth = $db->prepare('UPDATE `messages` SET `content` = ? , `status` = ? ,`date_edit` = CURRENT_TIME() WHERE `messages`.`idmessages` = ?');
+            return $sth->execute([$content,$status, $id]);
         } catch (\PDOException $th) {
             echo ($th->getMessage());
         }
