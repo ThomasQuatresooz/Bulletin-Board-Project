@@ -53,7 +53,35 @@ class TopicGateway
         try {
             $db = DatabaseManager::getInstance()->getDatabase();
             $sth = $db->prepare($statement);
-            return ($sth->execute([$name, $idAuthor, $idBoard])) ? $db->lastInsertId() : null;
+            $ret = ($sth->execute([$name, $idAuthor, $idBoard])) ? $db->lastInsertId() : null;
+            if (isset($ret) && $idBoard == '6' && $this->numberOfTopicFromBoard($idBoard) > 5) {
+                $this->deleteOldestOne();
+            }
+            return $ret;
+        } catch (\PDOException $th) {
+            echo ($th->getMessage());
+        }
+    }
+
+    private function deleteOldestOne()
+    {
+        $statement = 'DELETE FROM topics WHERE topics.boards_idboards = 6 ORDER by topics.date_creation LIMIT 1';
+        try {
+            $db = DatabaseManager::getInstance()->getDatabase();
+            $sth = $db->prepare($statement);
+            return $sth->execute();
+        } catch (\PDOException $th) {
+            echo ($th->getMessage());
+        }
+    }
+
+    private function numberOfTopicFromBoard($id): ?int
+    {
+        $statement = 'SELECT COUNT(idtopics)as `Number` FROM topics WHERE topics.boards_idboards = 6 ';
+        try {
+            $db = DatabaseManager::getInstance()->getDatabase();
+            $sth = $db->prepare($statement);
+            return ($sth->execute() ? $sth->fetch()['Number'] : null);
         } catch (\PDOException $th) {
             echo ($th->getMessage());
         }
