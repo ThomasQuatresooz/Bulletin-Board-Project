@@ -80,28 +80,51 @@ spl_autoload_register(function ($class) {
     ';
   }
   ?>
+  <?php
 
-  <div class="container">
-    <div class="row">
-      <div class="form-group col-lg-12 emoji-picker-container">
-        <form action="createMessage.php?topic_id=<?php echo $topic->getIdtopics() ?> " method="post">
-          <label for="message_input">New Message</label>
-          <textarea class="form-control" name="message" id="message_input" rows="3" data-emojiable='true'></textarea>
-          <a href="pagetopic.php?id=<?php echo $topic->getIdtopics() ?>"><button type="submit" class="btn btn-primary col-lg-6 mt-3">Send</button></a>
-        </form>
+  if ($message->getIdUsers() != $_SESSION['USER']) {
+  ?>
+
+    <div class="container">
+      <div class="row">
+        <div class="form-group col-lg-12 emoji-picker-container">
+          <form action="createMessage.php?topic_id=<?php echo $topic->getIdtopics() ?> " method="post">
+            <label for="message_input">New Message</label>
+            <textarea class="form-control" name="message" id="message_input" rows="3" data-emojiable='true'></textarea>
+            <a href="pagetopic.php?id=<?php echo $topic->getIdtopics() ?>"><button type="submit" class="btn btn-primary col-lg-6 mt-3">Send</button></a>
+          </form>
+        </div>
+
+        <template>
+          <form method="post">
+            <label for="message_input">Edit Message</label>
+            <textarea class="form-control" name="message" id="message_input" rows="3" data-emojiable='true'></textarea>
+            <a id="editDone" href="pagetopic.php?id=<?php echo $topic->getIdtopics() ?>"><button type="submit" class="btn btn-primary col-lg-6 mt-3">Send</button></a>
+          </form>
+        </template>
       </div>
-
-      <template>
-        <form method="post">
-          <label for="message_input">Edit Message</label>
-          <textarea class="form-control" name="message" id="message_input" rows="3" data-emojiable='true'></textarea>
-          <a id="editDone" href="pagetopic.php?id=<?php echo $topic->getIdtopics() ?>"><button type="submit" class="btn btn-primary col-lg-6 mt-3">Send</button></a>
-        </form>
-      </template>
-
-
     </div>
-  </div>
+
+  <?php
+  } else {
+  ?>
+    <div class="container">
+      <div class="row">
+
+        <template>
+          <form method="post">
+            <label for="message_input">Edit Message</label>
+            <textarea class="form-control" name="message" id="message_input" rows="3" data-emojiable='true'></textarea>
+            <a id="editDone" href="pagetopic.php?id=<?php echo $topic->getIdtopics() ?>"><button type="submit" class="btn btn-primary col-lg-6 mt-3">Send</button></a>
+          </form>
+        </template>
+      </div>
+    </div>
+
+
+  <?php
+  }
+  ?>
 
 
 

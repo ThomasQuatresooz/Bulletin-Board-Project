@@ -2,7 +2,7 @@
 class DatabaseManager
 {
 
-    private const DB_NAME = "test";
+    private const DB_NAME = "forum";
     private const HOST = "mysql:3306";
     private const USER = "root";
     private const PWD = "root";
