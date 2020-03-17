@@ -18,5 +18,5 @@ $mgate = new TopicGateway();
 
 $mgate->lockTopic($_GET[ID], 0);
 
-
+header('Location: ' . $_SERVER['HTTP_REFERER']);
 exit();

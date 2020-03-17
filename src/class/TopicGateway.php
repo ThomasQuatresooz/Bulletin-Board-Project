@@ -61,12 +61,11 @@ class TopicGateway
 
     public function lockTopic($id, $status)
     {
-        var_dump('id = ' . $id, 'status = ' . $status);
+        //var_dump('id = ' . $id, 'status = ' . $status);
 
         try {
             $db = DatabaseManager::getInstance()->getDatabase();
-            $sth = $db->prepare('UPDATE `topics` SET `status` = ? WHERE `topics`.`idtopics` = ?');
-            var_dump($sth);
+            $sth = $db->prepare('UPDATE `topics` SET `status` = ? WHERE `topics`.`idtopics` = ?');;
             return $sth->execute([$status, $id]);
         } catch (\PDOException $th) {
             echo ($th->getMessage());

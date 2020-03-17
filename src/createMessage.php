@@ -10,7 +10,7 @@ spl_autoload_register(function ($class) {
     include 'class/' . $class . '.php';
 });
 
-
+//var_dump("test");
 const MESSAGE = 'message';
 const ID_TOPIC  = 'topic_id';
 
@@ -21,9 +21,9 @@ if (isset($_POST[MESSAGE]) && isset($_GET[ID_TOPIC])) {
     } else {
         header('http/1.1 400');
     }
-    header('Location:pagetopic.php?id=' . $_GET[ID_TOPIC],true,301);
+    header('Location:pagetopic.php?id=' . $_GET[ID_TOPIC], true, 301);
     exit();
 }
 header('http/1.1 400');
-header('Location:pagetopic.php?id=' . $_GET[ID_TOPIC],true,301);
+header('Location:pagetopic.php?id=' . $_GET[ID_TOPIC], true, 301);
 exit();
