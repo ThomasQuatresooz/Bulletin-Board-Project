@@ -16,7 +16,7 @@ const MESSAGE = 'message';
 $mgate = new TopicGateway();
 
 
-$mgate->lockTopic($_get[ID], 0);
+$mgate->lockTopic($_GET[ID], 0);
 
 
 exit();

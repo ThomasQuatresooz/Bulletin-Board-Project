@@ -61,6 +61,7 @@ class TopicGateway
 
     public function lockTopic($id, $status)
     {
+        var_dump('id = ' . $id, 'status = ' . $status);
 
         try {
             $db = DatabaseManager::getInstance()->getDatabase();
