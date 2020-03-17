@@ -20,7 +20,7 @@ class UserGateway
 
     public function find($id): ?User
     {
-        $statement = 'SELECT idUsers,name,email,password,signature FROM users WHERE idUsers = ?';
+        $statement = 'SELECT idUsers,name,email,password,signature,avatar FROM users WHERE idUsers = ?';
 
         try {
             $db = DatabaseManager::getInstance()->getDatabase();
@@ -114,6 +114,18 @@ class UserGateway
             $db = DatabaseManager::getInstance()->getDatabase();
             $sth = $db->prepare($statement);
             return ($sth->execute([$userId])) ? $sth->fetch()['avatar'] : null;
+        } catch (\PDOException $th) {
+            echo ($th->getMessage());
+        }
+    }
+
+    public function updateAvatar($path,$id)
+    {
+        $statement = 'UPDATE `users` SET `avatar` = ? WHERE `users`.`idUsers` = ?';
+        try {
+            $db = DatabaseManager::getInstance()->getDatabase();
+            $sth = $db->prepare($statement);
+            return ($sth->execute([$path, $id]));
         } catch (\PDOException $th) {
             echo ($th->getMessage());
         }
