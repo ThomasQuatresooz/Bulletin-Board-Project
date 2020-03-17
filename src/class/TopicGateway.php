@@ -59,6 +59,11 @@ class TopicGateway
         }
     }
 
+    public function lockTopic($id)
+    {
+        var_dump('test');
+    }
+
     //SELECT * FROM `topics` WHERE `boards_idboards` = 1 AND `date-creation` IS NOT NULL ORDER BY `date-edit`, `date-creation` 
 }
 
