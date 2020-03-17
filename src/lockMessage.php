@@ -17,12 +17,6 @@ $mgate = new TopicGateway();
 
 
 var_dump($mgate->lockTopic(ID));
-try {
-    $db = DatabaseManager::getInstance()->getDatabase();
-    $sth = $db->prepare('UPDATE `messages` SET `content` = ? , `status` = ? ,`date_edit` = CURRENT_TIME() WHERE `messages`.`idmessages` = ?');
-    return $sth->execute([$content, $status, $id]);
-} catch (\PDOException $th) {
-    echo ($th->getMessage());
-}
+
 
 exit();

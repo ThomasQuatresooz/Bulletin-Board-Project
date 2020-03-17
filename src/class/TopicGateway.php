@@ -61,7 +61,15 @@ class TopicGateway
 
     public function lockTopic($id)
     {
-        var_dump('test');
+
+        try {
+            $db = DatabaseManager::getInstance()->getDatabase();
+            $sth = $db->prepare('UPDATE `topics` SET `status` = ? WHERE `topics`.`idtopics` = ?');
+            var_dump($sth);
+            return $sth->execute([$status, $id]);
+        } catch (\PDOException $th) {
+            echo ($th->getMessage());
+        }
     }
 
     //SELECT * FROM `topics` WHERE `boards_idboards` = 1 AND `date-creation` IS NOT NULL ORDER BY `date-edit`, `date-creation` 

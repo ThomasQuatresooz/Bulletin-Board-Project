@@ -1,24 +1,26 @@
 <?php
 
 
-class Topic implements JsonSerializable{
+class Topic implements JsonSerializable
+{
     private $idtopics;
     private $name;
     private $date_creation;
     private $date_edit;
     private $messages = [];
     private $author;
+    private $status;
 
-public function jsonSerialize()
-{
-    return [
-        'name' => $this->name
-    ];
-}
+    public function jsonSerialize()
+    {
+        return [
+            'name' => $this->name
+        ];
+    }
 
     /**
      * Get the value of messages
-     */ 
+     */
     public function getMessages()
     {
         return $this->messages;
@@ -28,7 +30,7 @@ public function jsonSerialize()
      * Set the value of messages
      *
      * @return  self
-     */ 
+     */
     public function setMessages($messages)
     {
         $this->messages = $messages;
@@ -38,7 +40,7 @@ public function jsonSerialize()
 
     /**
      * Get the value of date_edit
-     */ 
+     */
     public function getDate_edit()
     {
         return $this->date_edit;
@@ -48,7 +50,7 @@ public function jsonSerialize()
      * Set the value of date_edit
      *
      * @return  self
-     */ 
+     */
     public function setDate_edit($date_edit)
     {
         $this->date_edit = $date_edit;
@@ -58,7 +60,7 @@ public function jsonSerialize()
 
     /**
      * Get the value of date_creation
-     */ 
+     */
     public function getDate_creation()
     {
         return $this->date_creation;
@@ -68,7 +70,7 @@ public function jsonSerialize()
      * Set the value of date_creation
      *
      * @return  self
-     */ 
+     */
     public function setDate_creation($date_creation)
     {
         $this->date_creation = $date_creation;
@@ -78,7 +80,7 @@ public function jsonSerialize()
 
     /**
      * Get the value of name
-     */ 
+     */
     public function getName()
     {
         return $this->name;
@@ -88,7 +90,7 @@ public function jsonSerialize()
      * Set the value of name
      *
      * @return  self
-     */ 
+     */
     public function setName($name)
     {
         $this->name = utf8_encode($name);
@@ -98,7 +100,7 @@ public function jsonSerialize()
 
     /**
      * Get the value of idtopics
-     */ 
+     */
     public function getIdtopics()
     {
         return $this->idtopics;
@@ -108,10 +110,30 @@ public function jsonSerialize()
      * Set the value of idtopics
      *
      * @return  self
-     */ 
+     */
     public function setIdtopics($idtopics)
     {
         $this->idtopics = $idtopics;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of status
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Set the value of status
+     *
+     * @return  self
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
 
         return $this;
     }
