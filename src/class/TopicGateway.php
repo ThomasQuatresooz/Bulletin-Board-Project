@@ -59,7 +59,7 @@ class TopicGateway
         }
     }
 
-    public function lockTopic($id)
+    public function lockTopic($id, $status)
     {
 
         try {

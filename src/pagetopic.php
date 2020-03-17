@@ -60,7 +60,7 @@ spl_autoload_register(function ($class) {
     if (($_SESSION['USER'] == $message->getIdUsers()) && boolval($message->getStatus())) {
       echo '<div class="col-lg-2 text-right">
             <a class="h-100 w-100 editButton" data-id= ' . $message->getIdmessages() . '><i class="fas fa-pen"></i></a>
-            <a class="h-100 w-100" href="lockMessage.php?id=' . $message->getTopics_idtopics() . '"><i class="fas fa-lock"></i></a>
+            <a class="h-100 w-100" href="lockTopic.php?id=' . $message->getTopics_idtopics() . '"><i class="fas fa-lock"></i></a>
             <a class="h-100 w-100" href="editMessage.php?id=' . $message->getIdmessages() . '"><i class="fas fa-times"></i></a>
             </div> ';
     };
